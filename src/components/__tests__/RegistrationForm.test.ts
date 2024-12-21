@@ -18,7 +18,7 @@ describe('Registration Form Integration Tests', () => {
       // Verify multiple validation errors appear together
       const errorMessages = formWrapper.findAll('.error-message')
       expect(errorMessages.length).toBeGreaterThan(0)
-      expect(formWrapper.text()).toContain('Username is required')
+      expect(formWrapper.text()).toContain('Username is required!!')
       expect(formWrapper.text()).toContain('Email is required')
       expect(formWrapper.text()).toContain('Password is required')
     })
