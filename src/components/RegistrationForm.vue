@@ -57,7 +57,11 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, reactive } from 'vue'
+  import { reactive, defineComponent } from 'vue'
+
+  defineComponent({
+    name: 'RegistrationForm'
+  })
 
   interface FormData {
     username: string

@@ -56,8 +56,8 @@ describe('Registration Form Integration Tests', () => {
       await formWrapper.find('form').trigger('submit')
 
       // Verify valid fields retain their values
-      expect(formWrapper.find('#username').element.value).toBe('validuser')
-      expect(formWrapper.find('#email').element.value).toBe('test@example.com')
+      expect((formWrapper.find('#username').element as HTMLInputElement).value).toBe('validuser')
+      expect((formWrapper.find('#email').element as HTMLInputElement).value).toBe('test@example.com')
       expect(formWrapper.text()).toContain('Password is required')
     })
 
