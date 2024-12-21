@@ -12,33 +12,33 @@
 </template>
 
 <script setup lang="ts">
-interface Emits {
-  (e: 'digit', value: string): void
-  (e: 'operator', value: string): void
-  (e: 'calculate'): void
-  (e: 'clear'): void
-}
+  interface Emits {
+    (e: 'digit', value: string): void
+    (e: 'operator', value: string): void
+    (e: 'calculate'): void
+    (e: 'clear'): void
+  }
 
-const emit = defineEmits<Emits>()
+  const emit = defineEmits<Emits>()
 </script>
 
 <style scoped>
-.number-pad {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-}
+  .number-pad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
 
-button {
-  padding: 1rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-}
+  button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+  }
 
-button:hover {
-  background-color: #f0f0f0;
-}
-</style> 
+  button:hover {
+    background-color: #f0f0f0;
+  }
+</style>

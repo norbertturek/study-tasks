@@ -51,10 +51,10 @@ describe('Registration Form Integration Tests', () => {
       // Fill form with partial valid data
       await formWrapper.find('#username').setValue('validuser')
       await formWrapper.find('#email').setValue('test@example.com')
-      
+
       // First validation attempt
       await formWrapper.find('form').trigger('submit')
-      
+
       // Verify valid fields retain their values
       expect(formWrapper.find('#username').element.value).toBe('validuser')
       expect(formWrapper.find('#email').element.value).toBe('test@example.com')
@@ -74,7 +74,7 @@ describe('Registration Form Integration Tests', () => {
     it('clears error states when valid data is entered', async () => {
       // First trigger errors
       await formWrapper.find('form').trigger('submit')
-      
+
       // Then fix one field
       await formWrapper.find('#username').setValue('validuser')
       await formWrapper.find('form').trigger('submit')
@@ -109,4 +109,4 @@ describe('Registration Form Integration Tests', () => {
       expect(formWrapper.findAll('.error-message').length).toBe(0)
     })
   })
-}) 
+})

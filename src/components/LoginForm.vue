@@ -29,102 +29,102 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+  import { reactive } from 'vue'
 
-interface FormData {
-  username: string
-  password: string
-}
-
-interface FormErrors {
-  username?: string
-  password?: string
-}
-
-const formData = reactive<FormData>({
-  username: '',
-  password: ''
-})
-
-const errors = reactive<FormErrors>({})
-
-const validateForm = (): boolean => {
-  let isValid = true
-  errors.username = ''
-  errors.password = ''
-
-  if (!formData.username) {
-    errors.username = 'Username is required'
-    isValid = false
+  interface FormData {
+    username: string
+    password: string
   }
 
-  if (!formData.password) {
-    errors.password = 'Password is required'
-    isValid = false
+  interface FormErrors {
+    username?: string
+    password?: string
   }
 
-  return isValid
-}
+  const formData = reactive<FormData>({
+    username: '',
+    password: ''
+  })
 
-const handleSubmit = () => {
-  if (validateForm()) {
-    emit('login', { ...formData })
+  const errors = reactive<FormErrors>({})
+
+  const validateForm = (): boolean => {
+    let isValid = true
+    errors.username = ''
+    errors.password = ''
+
+    if (!formData.username) {
+      errors.username = 'Username is required'
+      isValid = false
+    }
+
+    if (!formData.password) {
+      errors.password = 'Password is required'
+      isValid = false
+    }
+
+    return isValid
   }
-}
 
-const emit = defineEmits<{
-  (e: 'login', data: FormData): void
-}>()
+  const handleSubmit = () => {
+    if (validateForm()) {
+      emit('login', { ...formData })
+    }
+  }
+
+  const emit = defineEmits<{
+    (e: 'login', data: FormData): void
+  }>()
 </script>
 
 <style scoped>
-.login-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-.form-group {
-  margin-bottom: 1rem;
-}
+  .form-group {
+    margin-bottom: 1rem;
+  }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
 
-input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
 
-input.error {
-  border-color: #dc3545;
-}
+  input.error {
+    border-color: #dc3545;
+  }
 
-.error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-}
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
 
-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-}
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 
-button:hover {
-  background-color: #0056b3;
-}
-</style> 
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>

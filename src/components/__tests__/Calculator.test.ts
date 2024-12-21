@@ -12,10 +12,10 @@ describe('Calculator', () => {
   it('appends digits correctly', async (): Promise<void> => {
     const wrapper = mount(Calculator)
     const buttons = wrapper.findAll('button')
-    
+
     await buttons.find(btn => btn.text() === '1')?.trigger('click')
     await buttons.find(btn => btn.text() === '2')?.trigger('click')
-    
+
     const display = wrapper.find('.display')
     expect(display.text()).toBe('12')
   })
@@ -23,12 +23,12 @@ describe('Calculator', () => {
   it('performs addition correctly', async (): Promise<void> => {
     const wrapper = mount(Calculator)
     const buttons = wrapper.findAll('button')
-    
+
     await buttons.find(btn => btn.text() === '2')?.trigger('click')
     await buttons.find(btn => btn.text() === '+')?.trigger('click')
     await buttons.find(btn => btn.text() === '3')?.trigger('click')
     await buttons.find(btn => btn.text() === '=')?.trigger('click')
-    
+
     const display = wrapper.find('.display')
     expect(display.text()).toBe('5')
   })
@@ -36,12 +36,12 @@ describe('Calculator', () => {
   it('handles division by zero', async (): Promise<void> => {
     const wrapper = mount(Calculator)
     const buttons = wrapper.findAll('button')
-    
+
     await buttons.find(btn => btn.text() === '1')?.trigger('click')
     await buttons.find(btn => btn.text() === '/')?.trigger('click')
     await buttons.find(btn => btn.text() === '0')?.trigger('click')
     await buttons.find(btn => btn.text() === '=')?.trigger('click')
-    
+
     const display = wrapper.find('.display')
     expect(display.text()).toBe('Error')
   })
@@ -49,11 +49,11 @@ describe('Calculator', () => {
   it('clears the display', async (): Promise<void> => {
     const wrapper = mount(Calculator)
     const buttons = wrapper.findAll('button')
-    
+
     await buttons.find(btn => btn.text() === '1')?.trigger('click')
     await buttons.find(btn => btn.text() === '2')?.trigger('click')
     await buttons.find(btn => btn.text() === 'C')?.trigger('click')
-    
+
     const display = wrapper.find('.display')
     expect(display.text()).toBe('0')
   })
@@ -62,14 +62,14 @@ describe('Calculator', () => {
     it('adds two positive numbers correctly', async (): Promise<void> => {
       const wrapper = mount(Calculator)
       const buttons = wrapper.findAll('button')
-      
+
       await buttons.find(btn => btn.text() === '2')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '+')?.trigger('click')
       await buttons.find(btn => btn.text() === '1')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '=')?.trigger('click')
-      
+
       const display = wrapper.find('.display')
       expect(display.text()).toBe('40')
     })
@@ -77,7 +77,7 @@ describe('Calculator', () => {
     it('handles multiple additions correctly', async (): Promise<void> => {
       const wrapper = mount(Calculator)
       const buttons = wrapper.findAll('button')
-      
+
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '+')?.trigger('click')
       await buttons.find(btn => btn.text() === '3')?.trigger('click')
@@ -85,7 +85,7 @@ describe('Calculator', () => {
       await buttons.find(btn => btn.text() === '+')?.trigger('click')
       await buttons.find(btn => btn.text() === '2')?.trigger('click')
       await buttons.find(btn => btn.text() === '=')?.trigger('click')
-      
+
       const display = wrapper.find('.display')
       expect(display.text()).toBe('10')
     })
@@ -95,14 +95,14 @@ describe('Calculator', () => {
     it('subtracts two positive numbers correctly', async (): Promise<void> => {
       const wrapper = mount(Calculator)
       const buttons = wrapper.findAll('button')
-      
+
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '0')?.trigger('click')
       await buttons.find(btn => btn.text() === '-')?.trigger('click')
       await buttons.find(btn => btn.text() === '2')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '=')?.trigger('click')
-      
+
       const display = wrapper.find('.display')
       expect(display.text()).toBe('25')
     })
@@ -110,14 +110,14 @@ describe('Calculator', () => {
     it('handles negative results correctly', async (): Promise<void> => {
       const wrapper = mount(Calculator)
       const buttons = wrapper.findAll('button')
-      
+
       await buttons.find(btn => btn.text() === '2')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '-')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '0')?.trigger('click')
       await buttons.find(btn => btn.text() === '=')?.trigger('click')
-      
+
       const display = wrapper.find('.display')
       expect(display.text()).toBe('-25')
     })
@@ -125,7 +125,7 @@ describe('Calculator', () => {
     it('handles multiple subtractions correctly', async (): Promise<void> => {
       const wrapper = mount(Calculator)
       const buttons = wrapper.findAll('button')
-      
+
       await buttons.find(btn => btn.text() === '1')?.trigger('click')
       await buttons.find(btn => btn.text() === '0')?.trigger('click')
       await buttons.find(btn => btn.text() === '0')?.trigger('click')
@@ -137,9 +137,9 @@ describe('Calculator', () => {
       await buttons.find(btn => btn.text() === '2')?.trigger('click')
       await buttons.find(btn => btn.text() === '5')?.trigger('click')
       await buttons.find(btn => btn.text() === '=')?.trigger('click')
-      
+
       const display = wrapper.find('.display')
       expect(display.text()).toBe('50')
     })
   })
-}) 
+})

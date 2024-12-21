@@ -22,7 +22,7 @@ describe('Login Form', () => {
     cy.get('#password').type('password123')
 
     // Intercept console.log to verify data
-    cy.window().then((win) => {
+    cy.window().then(win => {
       cy.spy(win.console, 'log').as('consoleLog')
     })
 
@@ -43,10 +43,10 @@ describe('Login Form', () => {
   it('should maintain field states during form interaction', () => {
     // Type in username
     cy.get('#username').type('testuser')
-    
+
     // Submit form with missing password
     cy.get('form').submit()
-    
+
     // Verify username is preserved and password error is shown
     cy.get('#username').should('have.value', 'testuser')
     cy.contains('Password is required')
@@ -67,4 +67,4 @@ describe('Login Form', () => {
     cy.get('#username').should('have.value', '')
     cy.get('#password').should('have.value', '')
   })
-}) 
+})

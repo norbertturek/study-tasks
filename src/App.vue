@@ -10,24 +10,24 @@
 </template>
 
 <style>
-.app {
-  text-align: center;
-  padding: 2rem;
-}
+  .app {
+    text-align: center;
+    padding: 2rem;
+  }
 
-nav {
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
+  nav {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
 
-nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
+  nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
 
-nav a.router-link-active {
-  color: var(--color-heading);
-  font-weight: bold;
-}
+  nav a.router-link-active {
+    color: var(--color-heading);
+    font-weight: bold;
+  }
 </style>
