@@ -2,10 +2,7 @@
   <form @submit.prevent="handleSubmit" class="registration-form">
     <div class="form-group">
       <label for="username">Username</label>
-      <input
-        id="username"
-        v-model="formData.username"
-        type="text"
+      <input id="username" v-model="formData.username" type="text"
         required
         minlength="3"
         maxlength="20"
