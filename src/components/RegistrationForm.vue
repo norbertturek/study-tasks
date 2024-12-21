@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="registration-form social-form">
+  <form @submit.prevent="handleSubmit" class="registration-form social-form adf">
     <div class="form-group">
       <label for="username">Username</label>
       <input
