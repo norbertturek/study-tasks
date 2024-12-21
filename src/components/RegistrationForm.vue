@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="registration-form">
+  <form @submit.prevent="handleSubmit" class="registration-form confirmation-form">
     <div class="form-group">
       <label for="username">Username</label>
       <input id="username" v-model="formData.username" type="text"
